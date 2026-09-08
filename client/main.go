@@ -4,6 +4,7 @@ import (
 	"log"
 
 	// "github.com/google/cel-go/common/types/pb"
+	pb "github.com/Yadhu-Ayyanchira/go-gRPC/proto"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -20,11 +21,11 @@ func main() {
 	}
 	defer conn.Close()
 
-	// client := pb.NewGreetServiceClient(conn)
+	client := pb.NewGreetServiceClient(conn)
 
 	// names := &pb.NameList{
 	// 	Names: []string{"Alice", "Bob", "Charlie"},
 	// }
 
-	// callSayHello(client)
+	callSayHello(client)
 }
